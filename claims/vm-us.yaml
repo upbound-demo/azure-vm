@@ -1,0 +1,7 @@
+apiVersion: compute.example.com/v1alpha1
+kind: VirtualMachineClaim
+metadata:
+  name: us-vm
+  namespace: default
+spec: 
+  location: "US"

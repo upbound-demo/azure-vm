@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ctp-azure-config
+  namespace: argocd
+  labels:
+    acmeco/team: demo
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/upbound-demo/getting-started.git
+    targetRevision: azure-infra
+    path: configuration
+    directory:
+      recurse: true
+  destination:
+    name: ctp-azure
+    namespace: default

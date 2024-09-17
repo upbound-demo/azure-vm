@@ -1,0 +1,14 @@
+apiVersion: spaces.upbound.io/v1beta1
+kind: ControlPlane
+metadata:
+  name: ctp-azure
+  namespace: default
+  labels:
+    acmeco/team: demo
+spec:
+  crossplane:
+    autoUpgrade:
+      channel: Stable 
+  writeConnectionSecretToRef:
+    name: kubeconfig-ctp-azure
+    namespace: default
